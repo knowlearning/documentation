@@ -1,4 +1,4 @@
-# State
+# States
 
 Once an application has a user, it probably wants to show them some information and let them save some information. That's where state comes in. The Know Learning API lets you easily get and store, retrieve, and update state in JSON objects. All state that is created is addressable by a "universally unique id" (uuid).
 

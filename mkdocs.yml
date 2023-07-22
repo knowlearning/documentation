@@ -1,7 +1,7 @@
 site_name: Know Learning Documentation
 nav:
   - Home: index.md
-  - Guide:
+  - Introduction:
     - Installation: guide/installation.md
     - Users: guide/users.md
     - States: guide/states.md
@@ -12,6 +12,8 @@ nav:
     - Initialization: reference/initialization.md
     - Agents: reference/agents.md
     - Relational Data: reference/relational-data.md
+  - How-Tos: assets/under-construction.md
+  - Tutorials: assets/under-construction.md
 markdown_extensions:
   - admonition
   - pymdownx.details
