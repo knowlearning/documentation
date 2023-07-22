@@ -2,18 +2,18 @@ site_name: Know Learning Documentation
 nav:
   - Home: index.md
   - Introduction:
-    - Installation: guide/installation.md
-    - Users: guide/users.md
-    - States: guide/states.md
-    - Files: guide/files.md
-    - Historical Data: guide/historical-data.md
-    - Relational Data: guide/relational-data.md
+    - Installation: introduction/installation.md
+    - Users: introduction/users.md
+    - States: introduction/states.md
+    - Files: introduction/files.md
+    - Historical Data: introduction/historical-data.md
+    - Relational Data: introduction/relational-data.md
   - Reference:
     - Initialization: reference/initialization.md
     - Agents: reference/agents.md
     - Relational Data: reference/relational-data.md
-  - How-Tos: assets/under-construction.md
-  - Tutorials: assets/under-construction.md
+  - How-Tos: how-tos/index.md
+  - Tutorials: tutorials/index.md
 markdown_extensions:
   - admonition
   - pymdownx.details
