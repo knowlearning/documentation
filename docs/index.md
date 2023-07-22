@@ -1,6 +1,6 @@
 # Welcome to the Know Learning API
 
-The goal of this API is to give developers a small set of simple tools that can compose elegantly to form stateful backbones for complex applications.
+The goal of this API is to give developers a small set of simple tools that can compose elegantly into stateful backbones for complex applications.
 Regardless of the desired attibutes of an application, be they real-time, data intensive, collaborative, or others, developers should not need to make impactful and inevitably restrictive decisions up front.
 
 The Know Learning API is designed to smoothly transition projects from safe and playful sandboxes to high quality, globally deployed applications.
