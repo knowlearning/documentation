@@ -1,4 +1,5 @@
 site_name: Know Learning Documentation
+repo_url: https://github.com/knowlearning/documentation
 nav:
   - Home: index.md
   - Introduction:
