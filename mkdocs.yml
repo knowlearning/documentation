@@ -1,5 +1,6 @@
 site_name: Know Learning Documentation
 repo_url: https://github.com/knowlearning/documentation
+edit_uri: edit/trunk/docs/
 nav:
   - Home: index.md
   - Introduction:
@@ -23,6 +24,8 @@ theme:
   name: material
   logo: assets/logo-white.svg
   favicon: assets/logo-orange.svg
+  features:
+    - content.action.edit
   palette:
     primary: orange
   icon:
