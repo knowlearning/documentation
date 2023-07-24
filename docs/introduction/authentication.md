@@ -5,7 +5,7 @@ but that doesn't mean it has to be hard!
 Users can authenticate with our system in 2 main ways:
 Through a single-sign-on provider (most common), or by validating an authentication request made by a server or device (advanced).
 
-## Users using SSO
+## Users Using SSO
 
 ### Login
 The first concern of most applications is to get an authenticated user. To log a user in:
