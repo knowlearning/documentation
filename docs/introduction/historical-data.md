@@ -17,7 +17,7 @@ const updates = await response.text()
 The ```updates``` variable above will contain the following string value:
 
 ```
-1690058397758 [{ op: "add", path: ["my_favorite_number"], value: 42 }]
+1690058397758 [{ "op": "add", "path": ["my_favorite_number"], "value": 42 }]
 ```
 
 Whenever the state is modified, new lines are added to the downloadable file.

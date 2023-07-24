@@ -73,9 +73,10 @@ The metadata object returned will contain the user id of the owner, and some oth
 
 ## Names
 
-Names are pretty useful things, so useful you probably even have one yourself.
+Names are pretty useful things;
+they're so useful you probably even have one yourself.
 You can give your states names too.
-To name a new scope, simply create it like this:
+To get a new named state, simply create it like this:
 
 ```javascript
 const my_new_named_state = await Agent.state('sparky')
@@ -97,4 +98,4 @@ If you do that, you can no longer fetch the original state with ```Agent.state("
 
 !!! info
 
-    When you call ```Agent.state(name)```, the API will fetch your most recently updated state with that ```name```.
+    When you call ```Agent.state(name)```, the API fetches your most recently updated state with that ```name```.
