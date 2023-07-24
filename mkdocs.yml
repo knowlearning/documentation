@@ -5,15 +5,17 @@ nav:
   - Home: index.md
   - Introduction:
     - Installation: introduction/installation.md
-    - Users: introduction/users.md
+    - Authentication: introduction/authentication.md
     - States: introduction/states.md
     - Files: introduction/files.md
     - Historical Data: introduction/historical-data.md
     - Relational Data: introduction/relational-data.md
+    - Authorization: introduction/authorization.md
   - Reference:
     - Initialization: reference/initialization.md
     - Agents: reference/agents.md
     - Relational Data: reference/relational-data.md
+    - Authorization: reference/authorization.md
   - How-Tos: how-tos/index.md
   - Tutorials: tutorials/index.md
 markdown_extensions:
