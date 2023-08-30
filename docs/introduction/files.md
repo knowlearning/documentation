@@ -41,3 +41,9 @@ If you want to download a file directly to a user's computer:
 ```js
 await Agent.download(id).direct()
 ```
+
+If you just want a string of a URL that you can use to download the file, or to add as an image's "src" attribute, or reference in some other way:
+
+```js
+const downloadUrl = await Agent.download(id).url()
+```
