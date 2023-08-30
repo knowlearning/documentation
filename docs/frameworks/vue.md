@@ -23,8 +23,6 @@ Now all state updates to that component will be persisted, and the most recent s
 
 A persistent component does not have to be used as the application root. You are free to make any component in your app a persistent component:
 
-Now you are free to use that component in your template as usual:
-
 ```html
 <template>
   <div>
