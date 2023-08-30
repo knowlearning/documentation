@@ -18,6 +18,8 @@ nav:
     - Authorization: reference/authorization.md
   - How-Tos: how-tos/index.md
   - Tutorials: tutorials/index.md
+  - Frameworks:
+    - Vue: frameworks/vue.md
 markdown_extensions:
   - admonition
   - pymdownx.details
