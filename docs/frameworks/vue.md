@@ -2,7 +2,7 @@
 
 ## Persistent Components
 
-### Application root component
+### Application Root Components
 
 You can create a vue application who's root component's state is automatically bound to a scope you specify:
 
@@ -19,7 +19,7 @@ app.mount()
 
 Now all state updates to that component will be persisted, and the most recent state will be re-attached to on every reload.
 
-### Any component
+### Child Components
 
 A persistent component does not have to be used as the application root. You are free to make any component in your app a persistent component:
 
