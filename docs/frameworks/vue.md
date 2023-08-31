@@ -43,3 +43,42 @@ A persistent component does not have to be used as the application root. You are
   }
 </script>
 ```
+
+## Embedded Content Component
+
+You can embed other sites backed by @knowlearning/agents like so:
+
+```html
+<template>
+  <div>
+    <vueContentComponent
+      :id="id"
+      @state="handleState"
+      @mutate="handleMutate"
+    />
+  </div>
+</template>
+
+<script>
+  import { vueContentComponent } from '@knowlearning/agents'
+
+  export default {
+    components: {
+      vueContentComponent
+    },
+    data() {
+      return {
+        id: "some-uuid-reference"
+      }
+    },
+    methods: {
+      handleState(event) {
+        // event will contain the id that the embedded content called Agent.state(id) on
+      },
+      handleMutate(event) {
+        // event will contain the id for a state that the embedded content has updated
+      }
+    }
+  }
+</script>
+```
