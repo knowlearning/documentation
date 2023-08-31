@@ -16,9 +16,11 @@ Lets talk about 3 questions an app needs to answer before initialization:
     ```
     Now ```user``` will be the UUID that uniquely identifies your user (no matter who the provider is), and ```provider``` will be the single-sign-on provider the user logged in with (WARNING! ```provider``` may be ```"anonymous"```, in which case you probably want to show a login page).
 2.  What content should the user see? Usually we use 2 pieces of information to decide. Both of those pieces are found in the URL of the app: the domain the user is using, and the "resource path" (all parts after the domain).
-    1. We recommend that your app first checks if the path is a UUID. If it is a UUID, we recommend inspecting its metadata, then using its type to decide what kind of content you want to show.
+    1. We recommend that your app first checks if the path is a UUID. If it is a UUID, we recommend inspecting its metadata, then using its type to decide what kind of content you want to show. We recommend this because it helps other apps that want to embed your content (such apps can include valuable sequence wrappers and recommendation systems for that make your content even more useful to everyone).
     2. If the path is not a UUID, then your app makes the decision to show whatever component or content as it normally would (using a router for your framework, or whatever implementation you like best).
-3. What data do we use as the "props" for the content?
+
+    Other apps can still embed your content, but they will now need to know your domain, and remember the structure of your resource path to be able to reference your content. Embedding this way isn't so desireable since you will probably want to update the structure of your resource paths some day. It is also much easier to discover and share content via UUID (Of course this is debatable; those UUIDs are not the most beautiful looking things, and they are pretty hard to for humans to distinguish. But they are really easy for computers to recognize and make use of! If content is shared via UUID, then it becomes a lot easier to use the power tools Know Learning provides to explore connected data and metadata related to UUIDs).
+3. What data do we use as the "props" to initialize the content?
     1. If the path is a UUID, then we recommend you use the data of that UUID to initialize the content.
     2. If the path is not a UUID, then the app decides as it normally would (perhaps using query parameters, hardcoded values, or even requesting specially named scopes for the user).
 
