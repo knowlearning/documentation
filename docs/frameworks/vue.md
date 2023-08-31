@@ -94,7 +94,6 @@ The id passed into an embedded content component will be handled in the followin
 
 - If ```id``` is already a valid URL with a domain included (like ```app.knowlearning.org``` or ```app.knowlearning.org/any-other-path``` or even ```app.knowlearning.org/cc3e48de-82d8-42bc-8f5c-d2b7ab06a2fa```), then vueContentComponent will simply load that url in its iframe.
 
-
 !!! tip
 
     It is completely up to every domain owner to decide how to deal with URL paths, but we recommend all app creators check for a UUID passed as the path so that they can do something expected when an embedding app uses a UUID that belongs to their domain for the ```id``` of a vueContentComponent. Please see the "Recommended Scaffolding" to see an app structure we really recommend.
