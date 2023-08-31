@@ -97,4 +97,4 @@ The id passed into an embedded content component will be handled in the followin
 
 !!! tip
 
-  It is completely up to every domain owner to decide how to deal with URL paths, but we recommend all app creators check for a UUID passed as the path so that they can do something expected when an embedding app uses a UUID that belongs to their domain for the ```id``` of a vueContentComponent. Please see the "Recommended Scaffolding" to see an app structure we really recommend.
+    It is completely up to every domain owner to decide how to deal with URL paths, but we recommend all app creators check for a UUID passed as the path so that they can do something expected when an embedding app uses a UUID that belongs to their domain for the ```id``` of a vueContentComponent. Please see the "Recommended Scaffolding" to see an app structure we really recommend.
