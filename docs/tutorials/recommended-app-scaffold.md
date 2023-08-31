@@ -22,4 +22,4 @@ Lets talk about 3 questions an app needs to answer before initialization:
     1. If the path is a UUID, then we recommend you use the data of that UUID to initialize the content.
     2. If the path is not a UUID, then the app decides as it normally would (perhaps using query parameters, hardcoded values, or even requesting specially named scopes for the user).
 
-Once these questions are answered, an app has everything it needs to initialize. The recommended scaffold implementation we will dive into now will explicitly show how to answer these questions, but as we're doing so we will discuss the many flexibilities and possible decisions you as an app developer can make along the way as you build your unique app.
+Once these questions are answered, an app has everything it needs to initialize. The recommended scaffold implementation we will dive into now will explicitly show how to answer these questions. As we're doing so we will discuss the many flexibilities and possible decisions you as an app developer can make along the way as you build your unique app.
