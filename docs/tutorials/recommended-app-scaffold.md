@@ -12,8 +12,8 @@ Lets talk about 3 questions an app needs to answer before initialization:
 
 1.  What user is running our app? ```@knowlearning/agents``` handles authentication for you:
     ```js
- const { auth: { user, provider } } = await Agent.environment()
-  ```
+       const { auth: { user, provider } } = await Agent.environment()
+    ```
     Now ```user``` will be the UUID that uniquely identifies your user (no matter who the provider is), and ```provider``` will be the single-sign-on provider the user logged in with (WARNING! ```provider``` may be ```"anonymous"```, in which case you probably want to show a login page).
 2.  What content should the user see? Usually we use 2 pieces of information to decide. Both of those pieces are found in the URL of the app: the domain the user is using, and the "resource path" (all parts after the domain).
     1. We recommend that your app first checks if the path is a UUID. If it is a UUID, we recommend inspecting its metadata, then using its type to decide what kind of content you want to show.
