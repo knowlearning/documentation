@@ -4,7 +4,7 @@
 
 The goal of this scaffold isn't to prescribe exactly how you should structure an app. Many apps won't need all the flexibility that this scaffold allows for, so they'll probably be better served by much simpler main scripts.
 
-The goal of this scaffold is to demonstrate, as simply as possible, a fully fleshed out structure that provides clear places to make all important top-level application architecture decisions. This structure should work well with any front-end web application framework you want to use.
+The goal of this scaffold is to demonstrate, as simply as possible, a fully fleshed out structure with clear places to make top-level application architecture decisions. This structure should work well with any front-end web application framework.
 
 ## 3 Answers Required for Initialization
 
@@ -26,3 +26,48 @@ Lets talk about 3 questions an app needs to answer before initialization:
     2. If the path is not a UUID, then the app decides as it normally would (perhaps using query parameters, hardcoded values, or even requesting specially named scopes for the user).
 
 Once these questions are answered, an app has everything it needs to initialize. The recommended scaffold implementation we will dive into now will explicitly show how to answer these questions. As we're doing so we will discuss the many flexibilities and possible decisions for your unique app.
+
+## The Scaffold
+
+```js
+import { browserAgent } from '@knowlearning/agents'
+import { validate as isUUID } from 'uuid'
+
+/*
+  We recommend making Agent global so all scripts in your
+  project can simply reference it. If you don't want to use a
+  global variable, can import browserAgent in any script.
+  Calling browserAgent() always returns the same agent.
+*/
+window.Agent = browserAgent()
+
+const { auth: { user, provider } } = await Agent.environment()
+
+if (provider === 'anonymous') {
+  // render login page
+}
+else {
+  const url = new URL(window.location.href)
+  const { pathname } = url
+
+  // pathname is always prefixed with '/', so here we remove it
+  const potentialUUID = pathname.slice(1)
+
+  if (isUUID(potentialUUID)) {
+    const [ metadata, content ] = await Promise.all([
+      Agent.metadata(potentialUUID),
+      Agent.content(potentialUUID)
+    ])
+
+    //  use metadata.active_type to determine what
+    //  component/interface to initialize and use content to
+    //  initialize that component/interface with the right
+    //  properties
+  }
+  else {
+    //  use your preffered framework initialize content for
+    //  your site using a component, router, plain javascript
+    //  or any other tools you decide
+  }
+}
+```
