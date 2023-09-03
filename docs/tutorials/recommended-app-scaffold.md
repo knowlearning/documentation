@@ -31,7 +31,16 @@ Once these questions are answered, an app has everything it needs to initialize.
 
 ```js
 import { browserAgent } from '@knowlearning/agents'
-import { validate as isUUID } from 'uuid'
+import { v4 as uuid, validate as isUUID } from 'uuid'
+
+/*
+  Replace MEANINGFUL_APPLICATION_TYPE with something makes
+  sense for your application.
+
+  The scope you give this RUN_STATE_TYPE will be used as the
+  main persistent object for your user to write data into.
+*/
+const RUN_STATE_TYPE = 'application/json;type=MEANINGFUL_APPLICATION_TYPE'
 
 /*
   We recommend making Agent global so all scripts in your
@@ -54,15 +63,38 @@ else {
   const potentialUUID = pathname.slice(1)
 
   if (isUUID(potentialUUID)) {
-    const [ metadata, content ] = await Promise.all([
-      Agent.metadata(potentialUUID),
-      Agent.content(potentialUUID)
-    ])
+    Agent.addToContext(potentialUUID)
+    const { context } = await Agent.environment()
 
-    //  use metadata.active_type to determine what
-    //  component/interface to initialize and use content to
-    //  initialize that component/interface with the right
-    //  properties
+    const [ content, contentMetadata, runStateMetadata ] = await Promise.all([
+      Agent.state(potentialUUID),
+      Agent.metadata(potentialUUID),
+      Agent.metadata(context)
+    ])
+    /*
+      Using context as the name helps a user re-attach to the
+      same run-state whenever they encounter the same
+      content in the same context. If you want your app to
+      show the same state to the same user regardless of
+      of context, use a unique name instead of context.
+    */
+
+    //  Make sure runStateMetadata is of the proper type.
+    if (runStateMetadata.active_type !== RUN_STATE_TYPE) runStateMetadata.active_type = RUN_STATE_TYPE
+    /*
+      NOTE: You may find it more appropriate to set the type
+      based on contentMetadata.active_type, since your
+      application may run different types of content.
+    */
+
+    /*
+      Use contentMetadata.active_type to determine what
+      component/interface to initialize and use content to
+      initialize that component/interface with the right
+      properties. Use runStateMetadata.id to use as the main
+      scope to record the current user's interactions with
+      this content in this context.
+    */
   }
   else {
     //  use your preffered framework initialize content for
