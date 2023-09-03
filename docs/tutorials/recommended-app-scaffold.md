@@ -80,7 +80,11 @@ else {
       are "based" on "potentialUUID". If no such scope existed
       before, one will be created for the user. You can use
       whatever application logic you want to choose which scope
-      to use. They are sorted by last updated.
+      to use. They are sorted by last updated, where the most
+      recently updated is first.
+
+      If you would like to create a new branch, use:
+      const id = await Agent.branch(potentialUUID, RUN_STATE_TYPE)
     */
   }
   else {
