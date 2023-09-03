@@ -76,11 +76,11 @@ else {
       properties.
 
       "branches" is an array containing scopes that the given
-      user has created with active_type of RUN_STATE_TYPE. If
-      no such scope existed before, one will be created for the
-      user. You can use whatever application logic you want
-      to choose which scope to use. They are sorted by last
-      updated.
+      user has created with active_type of RUN_STATE_TYPE that
+      are "based" on "potentialUUID". If no such scope existed
+      before, one will be created for the user. You can use
+      whatever application logic you want to choose which scope
+      to use. They are sorted by last updated.
     */
   }
   else {
