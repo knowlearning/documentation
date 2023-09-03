@@ -63,37 +63,24 @@ else {
   const potentialUUID = pathname.slice(1)
 
   if (isUUID(potentialUUID)) {
-    Agent.addToContext(potentialUUID)
-    const { context } = await Agent.environment()
-
-    const [ content, contentMetadata, runStateMetadata ] = await Promise.all([
+    const [ content, contentMetadata, branches ] = await Promise.all([
       Agent.state(potentialUUID),
       Agent.metadata(potentialUUID),
-      Agent.metadata(context)
+      Agent.branches(potentialUUID, RUN_STATE_TYPE, user)
     ])
-    /*
-      Using context as the name helps a user re-attach to the
-      same run-state whenever they encounter the same
-      content in the same context. If you want your app to
-      show the same state to the same user regardless of
-      of context, use a unique name instead of context.
-    */
-
-    //  Make sure runStateMetadata is of the proper type.
-    if (runStateMetadata.active_type !== RUN_STATE_TYPE) runStateMetadata.active_type = RUN_STATE_TYPE
-    /*
-      NOTE: You may find it more appropriate to set the type
-      based on contentMetadata.active_type, since your
-      application may run different types of content.
-    */
 
     /*
-      Use contentMetadata.active_type to determine what
+      Use "contentMetadata.active_type" to determine what
       component/interface to initialize and use content to
       initialize that component/interface with the right
-      properties. Use runStateMetadata.id to use as the main
-      scope to record the current user's interactions with
-      this content in this context.
+      properties.
+
+      "branches" is an array containing scopes that the given
+      user has created with active_type of RUN_STATE_TYPE. If
+      no such scope existed before, one will be created for the
+      user. You can use whatever application logic you want
+      to choose which scope to use. They are sorted by last
+      updated.
     */
   }
   else {
