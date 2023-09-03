@@ -97,9 +97,9 @@ else {
     */
   }
   else {
-    //  use your preffered framework initialize content for
+    //  Use your preffered framework to initialize content for
     //  your site using a component, router, plain javascript
-    //  or any other tools you decide
+    //  or any other tools you want.
   }
 }
 ```
